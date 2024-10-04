@@ -1,9 +1,35 @@
-import { getUserDetails } from "./auth-service";
+import { getPersonalDetails } from "./auth-service";
 import { db } from "./db";
+
+export const getFollowedUsers = async () => {
+  try {
+    const personalProfile = await getPersonalDetails() 
+    
+    const followedUsers =  db.follow.findMany({
+      where: {
+        followerId: personalProfile.id,
+        following: {
+          blocked: {
+            none: {
+              blockerId: personalProfile.id
+            }
+          }
+        }
+      },
+      include: {
+        following: true
+      }
+    })
+
+    return followedUsers;
+  } catch (error) {
+    return [];
+  }
+}
 
 export const isFollowingUser = async (id: string) => {
   try {
-    const personalProfile = await getUserDetails();
+    const personalProfile = await getPersonalDetails();
 
     const followedProfile = await db.user.findUnique({
       where: { id },
@@ -31,7 +57,7 @@ export const isFollowingUser = async (id: string) => {
 };
 
 export const followUser = async (id: string) => {
-  const personalProfile = await getUserDetails();
+  const personalProfile = await getPersonalDetails();
 
   const targetProfile = await db.user.findUnique({
     where: { id },
@@ -71,7 +97,7 @@ export const followUser = async (id: string) => {
 }
 
 export const unfollowUser = async (id: string) => {
-  const personalProfile = await getUserDetails();
+  const personalProfile = await getPersonalDetails();
 
   const targetProfile = await db.user.findUnique({
     where: { id },

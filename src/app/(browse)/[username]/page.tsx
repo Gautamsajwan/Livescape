@@ -4,6 +4,7 @@ import { SearchSlash } from "lucide-react";
 import { notFound } from "next/navigation";
 import React from "react";
 import { Actions } from "./_components/actions";
+import { isBlockedByUser } from "@/lib/block-service";
 
 type Props = {
   params: {
@@ -24,6 +25,11 @@ async function ProfilePage({ params }: Props) {
   }
 
   const isFollowing = await isFollowingUser(user.id);
+  const isBlocked = await isBlockedByUser(user.id);
+
+  if(isBlocked) {
+    notFound()
+  }
 
   return (
     <div className="flex flex-col gap-2">
@@ -31,6 +37,7 @@ async function ProfilePage({ params }: Props) {
       <p>userid = {user.id}</p>
       <p>clerk id = {user.externalUserId}</p>
       <p>isFollowing = {`${isFollowing}`}</p>
+      <p>isBlocked by this user= {`${isBlocked}`}</p>
       <Actions userId={user.id} isFollowing={isFollowing} />
     </div>
   );

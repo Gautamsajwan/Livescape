@@ -1,4 +1,5 @@
 'use server'
+// these are server actions
 import { followUser, unfollowUser } from "@/lib/follow-service";
 import { revalidatePath } from "next/cache";
 

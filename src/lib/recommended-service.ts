@@ -1,11 +1,11 @@
 import { db } from "./db";
-import { getUserDetails } from "./auth-service";
+import { getPersonalDetails } from "./auth-service";
 
 export const getRecommended = async () => {
   let userId;
 
   try {
-    const user = await getUserDetails();
+    const user = await getPersonalDetails();
     userId = user.id;
   } catch (error) {
     userId = null;
@@ -16,9 +16,31 @@ export const getRecommended = async () => {
   if (userId) {
     allUsers = await db.user.findMany({
       where: {
-        NOT: {
-          id: userId,
-        },
+        AND: [
+          {
+            NOT: {
+              id: userId
+            }
+          },
+          {
+            NOT: {
+              followedBy: {
+                some: {
+                  followerId: userId
+                }
+              }
+            }
+          },
+          {
+            NOT: {
+              blocked: {
+                some: {
+                  blockedId: userId
+                }
+              }
+            }
+          }
+        ]
       },
       orderBy: {
         createdAt: "desc",

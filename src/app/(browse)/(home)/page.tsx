@@ -1,14 +1,11 @@
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import React from 'react'
 
-export default function Home() {
+type Props = {}
+
+function Home({}: Props) {
   return (
-    <main>
-      Hello world
-    </main>
-  );
+    <div>Home</div>
+  )
 }
+
+export default Home
