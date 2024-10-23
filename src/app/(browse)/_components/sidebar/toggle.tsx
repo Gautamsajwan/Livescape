@@ -13,7 +13,7 @@ function Toggle({}: Props) {
   return (
     <>
       {collapsed && (
-        <div className="p-3 hidden md:flex w-full items-center justify-center border-b-2 border-gray-600">
+        <div className="p-3 hidden md:flex w-full items-center justify-center border-b-[3px] border-gray-600 border-dashed">
           <Hint label={label} asChild={true} side='right'>
           <Button
             className="px-1 py-1 pl-[6px]"
@@ -26,7 +26,7 @@ function Toggle({}: Props) {
         </div>
       )}
       {!collapsed && (
-        <div className="px-4 py-3 flex items-center w-full border-b-2 border-gray-600">
+        <div className="px-4 py-2 flex items-center w-full border-b-[3px] border-gray-600 border-dashed">
           <p className="font-semibold text-primary">For you</p>
           <Hint label={label} asChild={true} side='right'>
           <Button

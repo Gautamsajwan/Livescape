@@ -1,5 +1,5 @@
 import { isFollowingUser } from "@/lib/follow-service";
-import { getUserByUserName } from "@/lib/user-service";
+import { getUserByUsername } from "@/lib/user-service";
 import { SearchSlash } from "lucide-react";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -13,7 +13,7 @@ type Props = {
 };
 
 async function ProfilePage({ params }: Props) {
-  const user = await getUserByUserName(params.username);
+  const user = await getUserByUsername(params.username);
 
   if (!user) {
     return (

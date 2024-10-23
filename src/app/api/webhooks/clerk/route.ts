@@ -24,7 +24,7 @@ export async function POST(req: Request) {
     return new Response("Error occured -- no svix headers", {
       status: 400,
     });
-  }
+  };
 
   // Get the body
   const payload = await req.json();

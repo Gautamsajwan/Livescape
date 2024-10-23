@@ -36,7 +36,7 @@ function UserAvatar({
     <div className="relative">
       <Avatar
         className={cn(
-          isLive ? "ring-2 ring-rose-400 border border-rose-400 " : "ring-2 ring-rose-200",
+          isLive ? "ring-2 ring-rose-400 border border-rose-400 " : "ring-2 ring-blue-300 ring-offset-4 ring-offset-gray-900",
           avatarSizes({ size })
         )}
       >

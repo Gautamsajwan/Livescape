@@ -5,7 +5,11 @@ import React from "react";
 import UserItem, { UserItemSkeleton } from "./user-item";
 
 type Props = {
-  data: (Follow & { following: User })[];
+  data: (Follow & { 
+    following: (User & {
+      stream: { isLive: boolean } | null
+    })
+  })[];
 };
 
 function FollowingProfiles({ data }: Props) {
@@ -26,7 +30,7 @@ function FollowingProfiles({ data }: Props) {
             key={follow.following.id}
             username={follow.following.username}
             imageUrl={follow.following.imageUrl}
-            isLive={true}
+            isLive={!!follow.following.stream?.isLive}
           />
         ))}
       </ul>
