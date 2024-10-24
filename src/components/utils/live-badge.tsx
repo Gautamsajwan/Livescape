@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { useSidebar } from "@/store/sidebarStore";
 import React from "react";
 
 type Props = {
@@ -7,7 +6,6 @@ type Props = {
 };
 
 function LiveBadge({ className }: Props) {
-  const { collapsed } = useSidebar(state => state)
   return (
     <div
       className={cn(

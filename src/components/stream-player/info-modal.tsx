@@ -2,7 +2,6 @@
 
 import { toast } from "sonner";
 import { useState, useTransition, useRef, ElementRef } from "react";
-import { useRouter } from "next/navigation";
 import { Trash } from "lucide-react";
 import Image from "next/image";
 import {
@@ -29,7 +28,7 @@ export const InfoModal = ({
   initialName,
   initialThumbnailUrl
 }: InfoModalProps) => {
-  const router = useRouter();
+  // const router = useRouter();
   const closeRef = useRef<ElementRef<"button">>(null);
   const [isPending, startTransition] = useTransition();
 

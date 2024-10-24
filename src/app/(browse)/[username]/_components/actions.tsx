@@ -3,7 +3,7 @@ import React, { useTransition } from "react";
 import { onFollow, onUnfollow } from "@/actions/follow-actions"
 import { Button } from "@/components/ui/button"
 import { toast } from "sonner";
-import { onBlock, onUnblock } from "@/actions/block-actions";
+import { onBlock } from "@/actions/block-actions";
 
 type Props = {
     isFollowing: boolean,
