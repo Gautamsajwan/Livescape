@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Stream, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import { Thumbnail, ThumbnailSkeleton } from "@/components/utils/thumbnail";
 import { Skeleton } from "@/components/ui/skeleton";
 import { UserAvatar, UserAvatarSkeleton } from "@/components/utils/user-avatar";

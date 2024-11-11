@@ -13,12 +13,12 @@ interface AboutCardProps {
 
 export const AboutCard = ({
   hostName,
-  hostIdentity,
-  viewerIdentity,
+  // hostIdentity,
+  // viewerIdentity,
   bio,
   followedByCount,
 }: AboutCardProps) => {
-  const hostAsViewer = `host-${hostIdentity}`;
+  // const hostAsViewer = `host-${hostIdentity}`;
   // const isHost = viewerIdentity === hostAsViewer;
 
   const followedByLabel = followedByCount === 1 ? "follower" : "followers";

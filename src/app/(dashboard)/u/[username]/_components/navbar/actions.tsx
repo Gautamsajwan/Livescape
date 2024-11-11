@@ -1,7 +1,7 @@
 import React from "react";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
-import { LogOut, SquareArrowOutUpRight, TwitchIcon } from "lucide-react";
+import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";
 
 type Props = {};
