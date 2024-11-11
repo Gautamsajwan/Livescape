@@ -24,7 +24,7 @@ export const Actions = ({ isFollowing, userId }: Props) => {
     const handleUnfollow = ()  => {
         startTransition(() => {
             onUnfollow(userId)
-                .then(data => toast.success(`You just unfollowed ${data.following.username}`))
+                .then(data => toast.success(`You just unfollowed ${data?.following.username}`))
                 .catch(() => toast.error("Failed to unFollow"))
         })
     }
@@ -32,7 +32,7 @@ export const Actions = ({ isFollowing, userId }: Props) => {
     const handleBlock = () => {
         startTransition(() => {
             onBlock(userId)
-                .then(data => toast.success(`You just blocked ${data.blocked.username}`))
+                .then(data => toast.success(`You just blocked ${data?.blocked.username}`))
                 .catch(() => toast.error('Failed to block'))
         })
     }
