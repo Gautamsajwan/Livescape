@@ -1,7 +1,7 @@
 import React from "react";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
-import { LogOut } from "lucide-react";
+import { LogOut, SquareArrowOutUpRight, TwitchIcon } from "lucide-react";
 import Link from "next/link";
 
 type Props = {};
@@ -15,8 +15,8 @@ async function Actions({}: Props) {
         asChild
       >
         <Link href="/">
-          <LogOut className="h-5 w-5 mr-2" />
-          <p className="tracking-wide font-semibold">Exit Dashboard</p>
+          <SquareArrowOutUpRight className="h-5 w-5 mr-2" />
+          <p className="tracking-wide font-semibold">Exit</p>
         </Link>
       </Button>
       <UserButton

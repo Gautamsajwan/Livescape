@@ -19,6 +19,7 @@ export async function POST(req: Request) {
     const evt = await receiver.receive(body, authorization)
 
     if(evt.event === 'ingress_started') {
+        console.log("webhook fired")
         await db.stream.update({
             where: {
                 ingressId: evt.ingressInfo?.ingressId,

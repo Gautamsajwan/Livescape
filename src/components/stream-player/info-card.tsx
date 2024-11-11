@@ -19,7 +19,8 @@ export const InfoCard = ({
 }: InfoCardProps) => {
   const hostAsViewer = `host-${hostIdentity}`
   const isHost = viewerIdentity === hostAsViewer
-  if (!isHost) return null
+  console.log({viewerIdentity, hostIdentity})
+  // if (!isHost) return null
   return (
     <div className="px-4">
       <div className="rounded-xl bg-background">

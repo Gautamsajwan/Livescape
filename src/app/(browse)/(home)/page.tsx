@@ -1,11 +1,13 @@
-import React from 'react'
+import { Suspense } from "react";
+import { ResultSkeleton, Results } from "./_components/results";
 
-type Props = {}
 
-function Home({}: Props) {
+export default function Home() {
   return (
-    <div>Home</div>
+    <div className='min-h-screen p-8 max-w-screen-2xl mx-auto'>
+      <Suspense fallback={<ResultSkeleton/>}>
+      <Results/>
+      </Suspense>
+    </div>
   )
 }
-
-export default Home

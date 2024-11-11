@@ -23,20 +23,20 @@ interface UserAvatarProps extends VariantProps<typeof avatarSizes> {
   showBadge?: boolean;
 }
 
-function UserAvatar({
+export const UserAvatar = ({
   username,
   imageUrl,
   isLive,
   showBadge,
   size
-}: UserAvatarProps) {
+}: UserAvatarProps) => {
   const canShowBadge = showBadge && isLive;
 
   return (
     <div className="relative">
       <Avatar
         className={cn(
-          isLive ? "ring-2 ring-rose-400 border border-rose-400 " : "ring-2 ring-blue-300 ring-offset-4 ring-offset-gray-900",
+          isLive ? "ring-2 ring-rose-400 border border-rose-400 " : "ring-2 ring-white ring-offset-4 ring-offset-gray-900",
           avatarSizes({ size })
         )}
       >

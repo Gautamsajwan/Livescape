@@ -84,7 +84,7 @@ export const ChatForm = ({
           size="sm"
           disabled={isDisabled}
           className={cn(
-            "-translate-y-[2px] bg-blue-500 text-white rounded-full h-12 w-12 p-0",
+            "-translate-y-[2px] bg-blue-500 hover:bg-blue-400 text-white rounded-full h-12 w-12 p-0",
             !collapsed && "rounded-lg"
           )}
         >

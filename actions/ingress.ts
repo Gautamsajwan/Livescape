@@ -41,7 +41,7 @@ export const resetIngresses = async (hostIdentity: string) => {
   }
 };
 
-export const createIngress = async (ingressType: IngressInput) => {
+export const createIngress = async (ingressType: IngressInput): Promise<any> => {
   const self = await getPersonalDetails();
   await resetIngresses(self.id);
   
@@ -71,7 +71,13 @@ export const createIngress = async (ingressType: IngressInput) => {
       },
     });
   }
-  const ingress = await ingressClient.createIngress(ingressType, options);
+
+  let ingress;
+  try {
+    ingress = await ingressClient.createIngress(ingressType, options);
+  } catch (error) {
+    console.error("Error creating ingress:", error);
+  }
 
   if (!ingress || !ingress.url || !ingress.streamKey) {
     throw new Error("Failed to create ingress");
