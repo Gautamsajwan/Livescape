@@ -9,10 +9,10 @@ const poppins = Poppins({
 
 export const LogoTitle = () => {
   return (
-    <div className="flex flex-col items-center gap-y-4">
-      <div className="bg-white rounded-full p-1">
+    <div className="flex flex-col items-center gap-y-2">
+      <div>
         <Image
-          src="/squarylines.svg"
+          src="/ls-logo.svg"
           alt="LiveScape logo"
           height="80"
           width="80"

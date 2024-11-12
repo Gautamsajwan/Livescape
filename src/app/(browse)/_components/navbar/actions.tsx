@@ -26,8 +26,8 @@ async function Actions({}: Props) {
             asChild
           >
             <Link href={`/u/${user.username}`}>
-              <Clapperboard className="w-7 h-7 lg:mr-2 text-gray-300 group-hover:text-inherit" />
-              <span className="hidden text-sm lg:block">Dashboard</span>
+              <Clapperboard className="w-7 h-7 lg:mr-1 text-gray-300 group-hover:text-inherit" />
+              <span className="hidden text-base lg:block translate-y-[5px]">Dashboard</span>
             </Link>
           </Button>
           <UserButton
