@@ -1,4 +1,6 @@
-# LiveHUB
+![Livescape demo](https://github.com/user-attachments/assets/04ebb875-c768-4548-81a6-ff0536544f37)
+
+# LiveScape
 
 Developed a full-stack video live streaming platform that supports real-time video streaming with RTMP and WHIP protocols. The platform includes interactive features such as live chat, likes, follows, and comments to enhance engagement during streams. Additionally, it provides creators with tools like slow mode in chat and audience moderation controls, enabling better stream management and an improved user experience.
 
